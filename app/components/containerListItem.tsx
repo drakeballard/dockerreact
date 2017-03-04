@@ -1,5 +1,9 @@
 import * as React from 'react'
 import * as classNames from 'classnames'
+import * as io from 'socket.io-client'
+
+const socket = io.connect()
+
 
 export interface Container {
 	id: string
@@ -10,6 +14,11 @@ export interface Container {
 }
 
 export class ContainerListItem extends React.Component<Container, {}> {
+
+	onActionButtonClick() {
+    	const evt = this.isRunning() ? 'container.stop' : 'container.start'
+    	socket.emit(evt, { id: this.props.id })
+	}
 
 	// Helper method to determine whether container is running or not
 	isRunning() {
@@ -30,7 +39,8 @@ export class ContainerListItem extends React.Component<Container, {}> {
 						Image: {this.props.image}
 					</div>
 					<div className="panel-footer">
-						<button className="btn btn-default">{buttonText}</button>
+						<button onClick={this.onActionButtonClick.bind(this)} 
+							className="btn btn-default">{buttonText}</button>
 					</div>
 					</div>
 					</div>
