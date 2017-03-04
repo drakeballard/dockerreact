@@ -4,7 +4,9 @@
   "description": "docker dashboard",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack -p && node server.js",
+    "start-dev": "./node_modules/.bin/concurrently 'nodemon server.js' 'webpack --watch'"
   },
   "repository": {
     "type": "git",
@@ -18,5 +20,9 @@
   "homepage": "https://github.com/drakeballard/dockerreact#readme",
   "dependencies": {
     "express": "^4.15.0"
+  },
+  "devDependencies": {
+    "concurrently": "^3.4.0",
+    "nodemon": "^1.11.0"
   }
 }
