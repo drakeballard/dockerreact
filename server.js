@@ -14,7 +14,7 @@ app.use(express.static('public'))
 app.get('/', (req, res) => res.sendFile(path.join(__dirname, 'index.html')))
 
 // The server will start
-sever.listen(port, () => console.log(`Server Started on the port ${port}`))
+server.listen(port, () => console.log(`Server Started on the port ${port}`))
 
 
 
