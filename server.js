@@ -38,6 +38,7 @@ io.on('connection', socket => {
 			container.start((err, data) => refreshContainers())
 		}
 	})
+	
 	socket.on('container.stop', args => {
     	const container = docker.getContainer(args.id)
 
@@ -45,6 +46,19 @@ io.on('connection', socket => {
         	container.stop((err, data) => refreshContainers())
     	}
 	})
+
+	socket.on('image.run', args => {
+    docker.createContainer({ Image: args.name }, (err, container) => {
+        if (!err)
+            container.start((err, data) => {
+                if (err)
+                    socket.emit('image.error', { message: err })
+            })
+        else
+            socket.emit('image.error', { message: err })
+    })
+})
+	
 })
 
 

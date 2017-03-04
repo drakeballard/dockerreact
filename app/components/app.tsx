@@ -36,6 +36,10 @@ export class AppComponent extends React.Component<{}, AppState> {
 
 		})
 
+		socket.on('image.error', (args: any) => {
+    		alert(args.message.json.message)
+		})
+
 	}
 
 	mapContainer(container:any): Container {
@@ -54,6 +58,10 @@ export class AppComponent extends React.Component<{}, AppState> {
 	componentDidMount() {
 		socket.emit('containers.list')
 	}
+
+	onRunImage(name: String) {
+    socket.emit('image.run', { name: name })
+    }
 
 	render() {
 	    return (
