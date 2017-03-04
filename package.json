@@ -1,0 +1,22 @@
+{
+  "name": "dockerreact",
+  "version": "1.0.0",
+  "description": "docker dashboard",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drakeballard/dockerreact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/drakeballard/dockerreact/issues"
+  },
+  "homepage": "https://github.com/drakeballard/dockerreact#readme",
+  "dependencies": {
+    "express": "^4.15.0"
+  }
+}
