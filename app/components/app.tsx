@@ -3,6 +3,8 @@ import { Container, ContainerListItem } from './containerListItem'
 import { ContainerList } from './containerList'
 import * as _ from 'lodash'
 import * as io from 'socket.io-client'
+import { NewContainerDialog } from './newContainerModal'
+import { DialogTrigger } from './dialogTrigger'
 
 let socket = io.connect()
 
@@ -55,12 +57,14 @@ export class AppComponent extends React.Component<{}, AppState> {
 
 	render() {
 	    return (
-	        <div className="container">
-	            <h1 className="page-header">Docker Dashboard</h1>
+	    <div className="container">
+            <h1 className="page-header">Docker Dashboard</h1>
+            <DialogTrigger id="newContainerModal" buttonText="New container" />
+            <ContainerListComponent title="Running" containers={this.state.containers} />
+            <ContainerListComponent title="Stopped containers" containers={this.state.stoppedContainers} />
 
-	            <ContainerList title="Running" containers={this.state.containers} />
-	            <ContainerList title="Stopped containers" containers={this.state.stoppedContainers} />
-	        </div>
+            <NewContainerDialog id="newContainerModal" onRunImage={this.onRunImage.bind(this)} />
+        </div>
 	    )
 	}
 
