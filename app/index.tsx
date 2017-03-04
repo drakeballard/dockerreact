@@ -5,4 +5,4 @@ import { AppComponent } from './components/app'
 ReactDOM.render(
 	<AppComponent />
 	document.getElementById('app')
-)
+)	
