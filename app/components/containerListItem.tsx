@@ -22,15 +22,15 @@ export class ContainerListItem extends React.Component<Container, {}> {
 		const buttonText = this.isRunning() ? 'Stop' : 'Start'
 
 		return(
-			<div classNames="col-sm-3">
-				<div classNames= { classes }>
-					<div classNames="panel-heading">{ this.props.name }</div>
-					<div classNames="panel-body">
+			<div className="col-sm-3">
+				<div className= { classes }>
+					<div className="panel-heading">{ this.props.name }</div>
+					<div className="panel-body">
 						Status: {this.props.status}<br/>
 						Image: {this.props.image}
 					</div>
-					<div classNames="panel-footer">
-						<button classNames="btn btn-default">{buttonText}</button>
+					<div className="panel-footer">
+						<button className="btn btn-default">{buttonText}</button>
 					</div>
 					</div>
 					</div>

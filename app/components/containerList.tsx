@@ -2,7 +2,7 @@ import * as React from 'react'
 import { Container, ContainerListItem } from './containerListItem'
 
 export class ContainerListProps {
-	container: container[]
+	containers: Container[]
 	title?: string
 }
 
