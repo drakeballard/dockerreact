@@ -6,7 +6,7 @@
 
 ### The following technologies are being used:
 + React.js
-+ TypeScript
++ TypeScript.js
 + Docker
 
 
