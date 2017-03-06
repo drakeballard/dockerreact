@@ -10,4 +10,4 @@
 + Docker
 
 
-## Please notice that this app is not fully functional.
+## Please note that this app is not fully functional at this point and some tweeks need to be made.
